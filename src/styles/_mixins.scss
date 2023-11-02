@@ -1,0 +1,138 @@
+@use "sass:math";
+
+@function rem($px) {
+  @return math.div($px , 16) + rem;
+}
+
+@function vwPC($px) {
+  @return math.div(($px * 100), 1280) + vw;
+}
+// enter mobile design width size
+@function vwMB($px) {
+  @return math.div(($px * 100), 360) + vw;
+}
+
+// ----------------------------------------------------------------------------
+// Media Queries
+// ----------------------------------------------------------------------------
+
+// *** Desktop first
+@mixin desktop-xl-down {
+  @media only screen and (max-width : $breakpoint-desktop-xl + 1) {
+    @content;
+  }
+}
+
+@mixin desktop-large-down {
+  @media only screen and (max-width : $breakpoint-desktop-large + 1) {
+    @content;
+  }
+}
+
+@mixin desktop-down {
+  @media only screen and (max-width : $breakpoint-desktop + 1) {
+    @content;
+  }
+}
+
+@mixin laptop-down {
+  @media only screen and (max-width : $breakpoint-laptop + 1) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @media only screen and (max-width : $breakpoint-tablet + 1) {
+    @content;
+  }
+}
+
+@mixin phone-down {
+  @media only screen and (max-width : $breakpoint-phone + 1) {
+    @content;
+  }
+}
+
+@mixin phone-small-down {
+  @media only screen and (max-width : $breakpoint-phone-small + 1) {
+    @content;
+  }
+}
+
+@mixin phone-xs-down {
+  @media only screen and (max-width : $breakpoint-phone-xs + 1) {
+    @content;
+  }
+}
+
+// *** Mobile first
+@mixin desktop-xl-up {
+  @media only screen and (min-width : $breakpoint-desktop-xl + 1) {
+    @content;
+  }
+}
+
+@mixin desktop-large-up {
+  @media only screen and (min-width : $breakpoint-desktop-large + 1) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media only screen and (min-width : $breakpoint-desktop + 1) {
+    @content;
+  }
+}
+
+@mixin laptop-up {
+  @media only screen and (min-width : $breakpoint-laptop + 1) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media only screen and (min-width : $breakpoint-tablet + 1) {
+    @content;
+  }
+}
+
+@mixin phone-up {
+  @media only screen and (min-width : $breakpoint-phone + 1) {
+    @content;
+  }
+}
+
+@mixin smallPhone-up {
+  @media only screen and (min-width : $breakpoint-small-phone + 1) {
+    @content;
+  }
+}
+
+@mixin phone-small-up {
+  @media only screen and (min-width : $breakpoint-phone-small + 1) {
+    @content;
+  }
+}
+
+@mixin phone-xs-up {
+  @media only screen and (min-width : $breakpoint-phone-xs + 1) {
+    @content;
+  }
+}
+
+@mixin desktop-large-down-little {
+  @media only screen and (max-width : $breakpoint-desktop-large-little + 1) {
+    @content;
+  }
+}
+
+// *** Custom Media Queries
+@mixin media-down($width) {
+  @media only screen and (max-width: $width) { @content; }
+}
+
+@mixin media-up($width) {
+  @media only screen and (min-width: $width) { @content; }
+}
+
+
