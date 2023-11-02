@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {catchError, of, Subject, tap, throwError} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {AuthEnvironments} from "../environments/auth.environments";
 import {UserLogin} from "../interfaces/auth.interface";
+import {AuthEnvironments} from "../environments/auth.environments";
 
 @Injectable({
   providedIn: 'root'
