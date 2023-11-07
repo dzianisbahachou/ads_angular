@@ -1,0 +1,84 @@
+@import "src/styles/common";
+
+.login-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.50);
+}
+
+.login-block-wrapper {
+  background: #FFFFFF;
+  border-radius: 50px;
+  width: vwPC(458);
+  height: vwPC(400);
+  position: absolute;
+  top: 20vh;
+  left: 35vw;
+}
+
+.login-block {
+  margin-top: vwPC(30);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-block img {
+}
+
+.login-title {
+  font-size: vwPC(32);
+}
+
+.login-description {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 7%;
+  top: 2.5rem;
+  width: vwPC(25);
+}
+
+.close-btn:hover {
+  cursor: pointer;
+}
+
+form {
+  margin-top: 2rem;
+}
+
+.login-btn {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.invalid {
+  color: red;
+}
+
+.form-control {
+  margin-bottom: .8rem;
+
+  &.invalid {
+    color: red;
+    input {
+      border-color: red;
+    }
+  }
+
+  .validation small{
+    color: red;
+  }
+}
+
+.requestFailed {
+  small{
+    color: red;
+  }
+}

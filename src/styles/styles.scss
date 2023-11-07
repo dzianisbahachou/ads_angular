@@ -1,5 +1,28 @@
 @import "src/styles/common";
+
 /* You can add global styles to this file, and also import other style files */
 * {
-  color: $orange;
+  color: $purple;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  max-width: vwPC(1080);
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+
+.container-banner {
+  max-width: vwPC(1170);
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
 }

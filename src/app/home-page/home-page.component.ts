@@ -9,8 +9,7 @@ import {signUp} from "../store/actions/auth.action";
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent {
-  constructor(private auth:AuthService, private store:Store) {}
-
+  constructor(private auth:AuthService, public store:Store) {}
 
   signUp() {
     this.store.dispatch(signUp())

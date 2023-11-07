@@ -1,20 +1,29 @@
-<h3 class="aa">ADS</h3>
+<div class="container-banner header">
+  <div class="logo-block">
+    <img src="assets/main-logo.png" alt="logo">
+    <div>
+      <div class="logo-title">ADS</div>
+      <div class="logo-description">Active. Daily. Smart</div>
+    </div>
+  </div>
 
-<nav>
-  <ul *ngIf="auth.isAuthenticated(); else login">
-    <li >New Words</li>
-    <li>Known Words</li>
-    <li>Add New Words</li>
-  </ul>
-</nav>
-{{isSignIn$ | async}} s
-<ng-template #login>
-  <button (click)="signIn()" [routerLink]="['/login']">Login</button>
-</ng-template>
+  <nav>
+    <ul *ngIf="auth.isAuthenticated()">
+      <li >New Words</li>
+      <li>Known Words</li>
+      <li>Add New Words</li>
+    </ul>
+  </nav>
 
-<div *ngIf="auth.isAuthenticated()">
-  <h3>User_name</h3>
-  <button (click)="auth.logout()">Logout Icon</button>
+
+  <div *ngIf="!auth.isAuthenticated()" class="login-btn" (click)="signIn()" [routerLink]="['/login']">Login</div>
+
+  <div class="profile-info" *ngIf="auth.isAuthenticated()">
+    <h3>User_name</h3>
+    <button (click)="auth.logout()">Logout Icon</button>
+  </div>
+
 </div>
+
 
 <router-outlet></router-outlet>

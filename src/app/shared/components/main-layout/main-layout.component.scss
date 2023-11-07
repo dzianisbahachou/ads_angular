@@ -1,0 +1,60 @@
+@import "src/styles/common";
+
+.header {
+  padding: 24px 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul{
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-info h3 {
+  margin-right: 20px;
+}
+
+.logo-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: vwPC(45);
+}
+
+.login-btn {
+  border: 2px solid $purple;
+  border-radius: vwPC(30);
+  padding: 16px 51px;
+  font-size: vwPC(16);
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: vwPC(45);
+}
+
+.login-btn:hover {
+  cursor: pointer;
+}
+
+
+.logo-title {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.logo-description {
+  font-size: 18px;
+  font-weight: 300;
+}

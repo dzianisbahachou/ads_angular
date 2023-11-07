@@ -33,7 +33,7 @@ export class AuthService {
       )
   }
 
-  signUp(user:any) {
+  register(user:any) {
     return this.http.post(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.apiKey}`, user)
       .pipe(
       catchError(this.handleError.bind(this))

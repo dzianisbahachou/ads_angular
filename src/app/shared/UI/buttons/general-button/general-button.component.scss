@@ -1,0 +1,18 @@
+.banner-btn {
+  margin-top: vwPC(40);
+  margin-bottom: vwPC(100);
+  font-size: 18px;
+  padding: 16px 54px;
+  background: #F8B500;
+  border-radius: 30px;
+  width: fit-content;
+  color: #FFFFFF;
+}
+
+.banner-btn:hover {
+  cursor: pointer;
+}
+
+.banner-btn:disabled {
+  cursor: not-allowed;
+}
