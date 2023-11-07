@@ -1,37 +1,67 @@
-<p *ngIf="isAuth === 'SIGN_IN'; else signup">Login</p>
-<ng-template #signup>
-  <p>Sign Up</p>
-</ng-template>
+<div class="login-back" (click)="onExit()">
+</div>
 
-<form [formGroup]="form" (ngSubmit)="loginSubmit()">
-  <div
-    [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
-  >
-    <label for="email">Email</label>
-    <input id="email" type="email" formControlName="email">
-    <div *ngIf="form.get('email').touched && form.get('email').invalid">
-      <small *ngIf="form.get('email').errors['required']">Email is required</small>
-      <small *ngIf="form.get('email').errors['email']">Enter correct email</small>
-    </div>
+<div class="login-block-wrapper">
+  <div class="login-block">
+
+    <img src="assets/login-modal-icon.png" alt="Login Modal Icon">
+    <div class="login-title" *ngIf="isAuth === 'SIGN_IN'; else signup">Welcome Back!</div>
+    <img (click)="onExit()" class="close-btn" src="assets/close-login-modal.png" alt="Close Modal">
+    <ng-template #signup>
+      <div class="login-title">Welcome!</div>
+    </ng-template>
+
+    <div class="login-description">Please enter your details</div>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div
+        [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
+        class="form-control"
+      >
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email">
+        <div
+          *ngIf="form.get('email').touched && form.get('email').invalid"
+          class="validation">
+          <small *ngIf="form.get('email').errors['required']">Email is required</small>
+          <small *ngIf="form.get('email').errors['email']">Enter correct email</small>
+        </div>
+      </div>
+
+      <div
+        [ngClass]="{invalid: form.get('password').touched && form.get('password').invalid}"
+        class="form-control"
+      >
+        <label for="password">Password</label>
+        <input id="password" type="email" formControlName="password">
+        <div
+          *ngIf="form.get('password').touched && form.get('password').invalid"
+          class="validation">
+          <small *ngIf="form.get('password').errors['required']">
+            Password is required
+          </small>
+          <small *ngIf="form.get('password').errors['minlength']">
+            Length should be at least {{form.get('password').errors['minlength'].requiredLength}}
+            but now {{form.get('password').errors['minlength'].actualLength}}
+          </small>
+        </div>
+      </div>
+
+      <div class="requestFailed" *ngIf="auth.error$ | async as errors">
+        <small>
+          {{errors}}
+        </small>
+      </div>
+
+      <div class="login-btn">
+        <app-general-button
+          [style]="{width: '20rem'}"
+          type="submit"
+          [text]="isAuth === 'SIGN_IN' ? 'Log In' : 'Join Us'"
+          [disabled]="form.invalid || submitted"
+        ></app-general-button>
+      </div>
+
+    </form>
   </div>
-
-  <div
-    [ngClass]="{invalid: form.get('password').touched && form.get('password').invalid}"
-  >
-    <label for="password">Password</label>
-    <input id="password" type="email" formControlName="password">
-    <div *ngIf="form.get('password').touched && form.get('password').invalid">
-      <small *ngIf="form.get('password').errors['required']">
-        Password is required
-      </small>
-      <small *ngIf="form.get('password').errors['minlength']">
-        Length should be at least {{form.get('password').errors['minlength'].requiredLength}}
-        but now {{form.get('password').errors['minlength'].actualLength}}
-      </small>
-    </div>
-  </div>
-
-  <button [disabled]="form.invalid || submitted">Log in</button>
-
-  <div *ngIf="auth.error$ | async as errors">{{errors}}</div>
-</form>
+</div>

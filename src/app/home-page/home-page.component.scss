@@ -1,0 +1,54 @@
+@import "src/styles/common";
+
+.banner {
+  background: $bannerBackground;
+  border-radius: 50px 50px 250px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div {
+  color: $white;
+}
+
+.info, .banner-img {
+  flex: 1 1 0;
+  width: 0;
+}
+
+.info {
+  padding-left: vwPC(45);
+}
+
+.banner-img img {
+  width: vwPC(570);
+}
+
+.banner-title {
+  font-size: vwPC(70);
+  margin-top: vwPC(113);
+  font-weight: 600;
+}
+
+.banner-description {
+  font-size: vwPC(20);
+  font-weight: 300;
+}
+
+.banner-btn {
+  margin-top: vwPC(40);
+  margin-bottom: vwPC(100);
+  font-size: vwPC(16);
+  padding: 16px 54px;
+  background: #F8B500;
+  border-radius: 30px;
+  width: fit-content;
+  box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.banner-slang {
+  font-size: vwPC(48);
+  font-weight: 300;
+  margin-bottom: vwPC(43);
+}

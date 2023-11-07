@@ -13,13 +13,15 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import {authReducer} from "./store/reducers/auth.reducer";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import { GeneralComponent } from './shared/UI/buttons/general-button/general-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     MainLayoutComponent,
-    LoginModalComponent
+    LoginModalComponent,
+    GeneralComponent
   ],
   imports: [
     BrowserModule,

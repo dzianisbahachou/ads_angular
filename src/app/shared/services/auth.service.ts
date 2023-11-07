@@ -33,8 +33,7 @@ export class AuthService {
       )
   }
 
-  signUp(user:any) {
-    debugger
+  register(user:any) {
     return this.http.post(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${AuthEnvironments.apiKey}`, user)
       .pipe(
       catchError(this.handleError.bind(this))
@@ -42,7 +41,6 @@ export class AuthService {
   }
 
   handleError(error:any) {
-    debugger
     const {message} = error.error.error;
     switch (message) {
       case 'INVALID_LOGIN_CREDENTIALS':

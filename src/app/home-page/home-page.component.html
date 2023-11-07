@@ -1,3 +1,29 @@
-<p>home-page works!</p>
-<button [routerLink]="['/register']" (click)="signUp()">Join Us</button>
+
+<div class="container-banner">
+  <div class="banner">
+    <div class="info">
+      <div class="banner-title">ADS</div>
+      <div class="banner-description">
+        ADS platform for effective English language learning.
+        Expand your vocabulary, add new words, repeat and memorize it.
+      </div>
+<!--      <div class="banner-btn" [routerLink]="['/register']" (click)="signUp()">Join Us</div>-->
+      <app-general-button
+        [style]="{width: '20rem'}"
+        type="button"
+        text="Join Us"
+        disabled=false
+        (onClicked)="signUp()"
+      >
+
+      </app-general-button>
+      <div class="banner-slang">Active. Daily. Smart.</div>
+    </div>
+    <div class="banner-img">
+        <img src="assets/main-banner-img.png" alt="Main Banner image">
+    </div>
+  </div>
+
+</div>
+
 <router-outlet></router-outlet>
