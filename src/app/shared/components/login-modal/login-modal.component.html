@@ -4,7 +4,7 @@
 <div class="login-block-wrapper">
   <div class="login-block">
 
-    <img src="assets/login-modal-icon.png" alt="Login Modal Icon">
+    <img class="login-logo" src="assets/login-modal-icon.png" alt="Login Modal Icon">
     <div class="login-title" *ngIf="isAuth === 'SIGN_IN'; else signup">Welcome Back!</div>
     <img (click)="onExit()" class="close-btn" src="assets/close-login-modal.png" alt="Close Modal">
     <ng-template #signup>

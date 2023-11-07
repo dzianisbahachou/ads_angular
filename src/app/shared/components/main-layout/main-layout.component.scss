@@ -1,7 +1,7 @@
 @import "src/styles/common";
 
 .header {
-  padding: 24px 2rem;
+  padding: vwPC(24) vwPC(32);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,7 +12,7 @@ nav ul{
 }
 
 nav ul li {
-  margin: 0 1rem;
+  margin: 0 vwPC(16);
 }
 
 .profile-info {
@@ -21,7 +21,7 @@ nav ul li {
 }
 
 .profile-info h3 {
-  margin-right: 20px;
+  margin-right: vwPC(20);
 }
 
 .logo-block {
@@ -29,25 +29,30 @@ nav ul li {
   justify-content: space-between;
   align-items: center;
   padding-left: vwPC(45);
+
+  img {
+    width: vwPC(56);
+    height: vwPC(56);
+  }
 }
 
 .login-btn {
-  border: 2px solid $purple;
+  border: vwPC(2) solid $purple;
   border-radius: vwPC(30);
-  padding: 16px 51px;
+  padding: vwPC(16) vwPC(51);
   font-size: vwPC(16);
   font-weight: 600;
   cursor: pointer;
   margin-right: vwPC(45);
-}
 
-.login-btn:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 
 .logo-title {
-  font-size: 32px;
+  font-size: vwPC(32);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -55,6 +60,6 @@ nav ul li {
 }
 
 .logo-description {
-  font-size: 18px;
+  font-size: vwPC(18);
   font-weight: 300;
 }
