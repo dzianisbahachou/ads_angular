@@ -7,16 +7,14 @@
         ADS platform for effective English language learning.
         Expand your vocabulary, add new words, repeat and memorize it.
       </div>
-<!--      <div class="banner-btn" [routerLink]="['/register']" (click)="signUp()">Join Us</div>-->
+
       <app-general-button
         [style]="{width: '20rem'}"
-        type="button"
         text="Join Us"
         disabled=false
         (onClicked)="signUp()"
-      >
-
-      </app-general-button>
+        [routerLink]="['/register']"
+      ></app-general-button>
       <div class="banner-slang">Active. Daily. Smart.</div>
     </div>
     <div class="banner-img">

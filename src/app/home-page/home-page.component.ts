@@ -11,9 +11,7 @@ import {signUp} from "../store/actions/auth.action";
 export class HomePageComponent {
   constructor(private auth:AuthService, public store:Store) {}
 
-
   signUp() {
-    debugger
     this.store.dispatch(signUp())
   }
 }

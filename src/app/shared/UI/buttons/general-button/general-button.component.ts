@@ -8,7 +8,7 @@ import {Component, ContentChild, ElementRef, EventEmitter, Input, OnInit, Output
 export class GeneralComponent implements OnInit{
   @Input() text:string = ''
   @Input() disabled:any = false
-  @Input() type:any = 'submit'
+  @Input() type:any = 'button'
   @Input() style:any = {}
   @Input() onClick:any
 
@@ -17,6 +17,7 @@ export class GeneralComponent implements OnInit{
   ngOnInit(): void {
   }
 
-
-  protected readonly onclick = onclick;
+  onClickHandler() {
+    this.onClicked.emit()
+  }
 }
