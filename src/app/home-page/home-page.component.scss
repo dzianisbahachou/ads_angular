@@ -2,7 +2,7 @@
 
 .banner {
   background: $bannerBackground;
-  border-radius: 50px 50px 250px 50px;
+  border-radius: vwPC(50) vwPC(50) vwPC(250) vwPC(50);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,11 +40,11 @@ div {
   margin-top: vwPC(40);
   margin-bottom: vwPC(100);
   font-size: vwPC(16);
-  padding: 16px 54px;
-  background: #F8B500;
-  border-radius: 30px;
+  padding: vwPC(16) vwPC(54);
+  background: $yellow;
+  border-radius: vwPC(30);
   width: fit-content;
-  box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  box-shadow: vwPC(-2) vwPC(-2) vwPC(4) 0 rgba(0, 0, 0, 0.25) inset;
 }
 
 .banner-slang {

@@ -1,18 +1,21 @@
+@import "src/styles/common";
+
 .banner-btn {
   margin-top: vwPC(40);
   margin-bottom: vwPC(100);
-  font-size: 18px;
-  padding: 16px 54px;
-  background: #F8B500;
-  border-radius: 30px;
-  width: fit-content;
-  color: #FFFFFF;
-}
+  box-shadow: vwPC(-2) vwPC(-2) vwPC(4) 0 rgba(0, 0, 0, 0.25) inset;
+  border: none;
+  font-size: vwPC(18);
+  padding: vwPC(16) vwPC(54);
+  background: $yellow;
+  border-radius: vwPC(30);
+  color: $white;
 
-.banner-btn:hover {
-  cursor: pointer;
-}
+  &:hover {
+    cursor: pointer;
+  }
 
-.banner-btn:disabled {
-  cursor: not-allowed;
+  &:disabled {
+    cursor: not-allowed;
+  }
 }

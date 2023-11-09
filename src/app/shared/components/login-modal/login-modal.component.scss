@@ -1,7 +1,7 @@
 @import "src/styles/common";
 
 .login-back {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -9,14 +9,20 @@
   background: rgba(0, 0, 0, 0.50);
 }
 
+.login-logo {
+  width: vwPC(56);
+  height: vwPC(56);
+}
+
 .login-block-wrapper {
-  background: #FFFFFF;
-  border-radius: 50px;
+  background: $white;
+  border-radius: vwPC(50);
   width: vwPC(458);
   height: vwPC(400);
   position: absolute;
-  top: 20vh;
-  left: 35vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .login-block {
@@ -34,51 +40,53 @@
 }
 
 .login-description {
-  font-size: 14px;
-  margin-top: 10px;
+  font-size: vwPC(14);
+  margin-top: vwPC(10);
 }
 
 .close-btn {
   position: absolute;
-  right: 7%;
-  top: 2.5rem;
-  width: vwPC(25);
-}
+  right: vwPC(30);
+  top: vwPC(30);
+  width: vwPC(30);
+  height: vwPC(30);
 
-.close-btn:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 form {
-  margin-top: 2rem;
+  margin-top: vwPC(32);
 }
 
 .login-btn {
-  margin-top: 2rem;
+  margin-top: vwPC(32);
   text-align: center;
 }
 
 .invalid {
-  color: red;
+  color: $validationError;
 }
 
 .form-control {
-  margin-bottom: .8rem;
+  margin-bottom: vwPC(13);
 
   &.invalid {
-    color: red;
+    color: $validationError;
+
     input {
-      border-color: red;
+      border-color: $validationError;
     }
   }
 
   .validation small{
-    color: red;
+    color: $validationError;
   }
 }
 
 .requestFailed {
   small{
-    color: red;
+    color: $validationError;
   }
 }
