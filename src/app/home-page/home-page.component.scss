@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: vwPC(24);
 }
 
 div {
@@ -27,24 +28,13 @@ div {
 
 .banner-title {
   font-size: vwPC(70);
-  margin-top: vwPC(113);
+  margin-top: vwPC(83);
   font-weight: 600;
 }
 
 .banner-description {
   font-size: vwPC(20);
   font-weight: 300;
-}
-
-.banner-btn {
-  margin-top: vwPC(40);
-  margin-bottom: vwPC(100);
-  font-size: vwPC(16);
-  padding: vwPC(16) vwPC(54);
-  background: $yellow;
-  border-radius: vwPC(30);
-  width: fit-content;
-  box-shadow: vwPC(-2) vwPC(-2) vwPC(4) 0 rgba(0, 0, 0, 0.25) inset;
 }
 
 .banner-slang {

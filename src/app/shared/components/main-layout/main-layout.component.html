@@ -1,6 +1,6 @@
-<header class="container-banner header">
+<header class="container header">
   <div class="logo-block">
-    <img src="assets/main-logo.png" alt="logo">
+    <img src="assets/main-logo.png" alt="logo" [routerLink]="['/']">
     <div>
       <div class="logo-title">ADS</div>
       <div class="logo-description">Active. Daily. Smart</div>
@@ -9,18 +9,31 @@
 
   <nav>
     <ul *ngIf="auth.isAuthenticated()">
-      <li >New Words</li>
-      <li>Known Words</li>
-      <li>Add New Words</li>
+      <li [routerLink]="['/profile']">Profile</li>
+      <li>Learn Words</li>
+      <li>My Words</li>
     </ul>
   </nav>
 
+  <div class="login-aside">
+    <app-general-button
+      *ngIf="!auth.isAuthenticated()"
+      class="header-login-btn"
+      text="Login"
+      [disabled]=false
+      (onClicked)="signIn()"
+      [routerLink]="['/login']"
+    ></app-general-button>
 
-  <div *ngIf="!auth.isAuthenticated()" class="login-btn" (click)="signIn()" [routerLink]="['/login']">Login</div>
-
-  <div class="profile-info" *ngIf="auth.isAuthenticated()">
-    <h3>User_name</h3>
-    <button (click)="auth.logout()">Logout Icon</button>
+    <div class="profile-info" *ngIf="auth.isAuthenticated()">
+      <p class="user-name">{{auth.userName}}</p>
+      <img
+        src="assets/logout.png"
+        alt="Logout Icon"
+        (click)="auth.logout()"
+        class="logout-icon"
+      />
+    </div>
   </div>
 
 </header>

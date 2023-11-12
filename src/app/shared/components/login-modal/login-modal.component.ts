@@ -95,5 +95,8 @@ export class LoginModalComponent implements OnInit{
     this.router.navigate(['/'])
   }
 
+  clearError() {
+    this.auth.error$.next(null)
+  }
 
 }

@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import {catchError, of, Subject, tap, throwError} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {UserLogin} from "../interfaces/auth.interface";
-import {environment} from "../../../environments/environment";
+import {environment} from "../../../environments/environment.template";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
-  public error$:Subject<string> = new Subject<string>()
+  public error$:Subject<any> = new Subject<any>()
+  public userName:string = ''
 
   constructor(private http:HttpClient) {}
 
@@ -28,6 +29,9 @@ export class AuthService {
     return this.http
       .post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.apiKey}`, user)
       .pipe(
+        tap((data:any) => {
+          this.userName = data.email.split('@')[0]
+        }),
         tap(this.setToken),
         catchError(this.handleError.bind(this))
       )
@@ -45,6 +49,9 @@ export class AuthService {
     switch (message) {
       case 'INVALID_LOGIN_CREDENTIALS':
         this.error$.next('Please, enter existing credentials')
+        break
+      case 'EMAIL_EXISTS':
+        this.error$.next('Email is already exist')
         break
     }
     return throwError(error)

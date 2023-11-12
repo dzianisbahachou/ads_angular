@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,8 @@ import { EffectsModule } from '@ngrx/effects';
 import {authReducer} from "./store/reducers/auth.reducer";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import { GeneralComponent } from './shared/UI/buttons/general-button/general-button.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { GeneralComponent } from './shared/UI/buttons/general-button/general-but
     HomePageComponent,
     MainLayoutComponent,
     LoginModalComponent,
-    GeneralComponent
+    GeneralComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,13 @@ import { GeneralComponent } from './shared/UI/buttons/general-button/general-but
       maxAge: 25,
       autoPause: true
     }),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
