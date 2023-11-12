@@ -3,14 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import {MainLayoutComponent} from "./shared/components/main-layout/main-layout.component";
 import {HomePageComponent} from "./home-page/home-page.component";
 import {LoginModalComponent} from "./shared/components/login-modal/login-modal.component";
+import {ProfilePageComponent} from "./profile-page/profile-page.component";
 
 const routes: Routes = [
   {path: '', component: MainLayoutComponent, children: [
     {path: '', redirectTo: '/', pathMatch: "full"},
     {path: '', component: HomePageComponent, children: [
-        {path: 'login', component: LoginModalComponent},
-        {path: 'register', component: LoginModalComponent},
-      ]},
+      {path: 'login', component: LoginModalComponent},
+      {path: 'register', component: LoginModalComponent},
+    ]},
+    {path: 'profile', component: ProfilePageComponent}
   ]}
 ];
 

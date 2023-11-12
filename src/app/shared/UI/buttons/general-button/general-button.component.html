@@ -1,1 +1,9 @@
-<button (click)="onClickHandler()" [style]="style" [type]="type" class="banner-btn" >{{text}}</button>
+<button
+  (click)="onClickHandler()"
+  [disabled]="disabled"
+  [class]="class"
+  [type]="type"
+  class="banner-btn"
+>
+  {{text}}
+</button>

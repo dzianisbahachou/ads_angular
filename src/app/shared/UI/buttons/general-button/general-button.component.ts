@@ -9,7 +9,7 @@ export class GeneralComponent implements OnInit{
   @Input() text:string = ''
   @Input() disabled:any = false
   @Input() type:any = 'button'
-  @Input() style:any = {}
+  @Input() class:any = ''
   @Input() onClick:any
 
   @Output() public onClicked: EventEmitter<void> = new EventEmitter();

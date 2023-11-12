@@ -19,7 +19,7 @@
         class="form-control"
       >
         <label for="email">Email</label>
-        <input id="email" type="email" formControlName="email">
+        <input (input)="clearError()" id="email" type="email" formControlName="email">
         <div
           *ngIf="form.get('email').touched && form.get('email').invalid"
           class="validation">
@@ -33,7 +33,7 @@
         class="form-control"
       >
         <label for="password">Password</label>
-        <input id="password" type="email" formControlName="password">
+        <input (input)="clearError()" id="password" type="email" formControlName="password">
         <div
           *ngIf="form.get('password').touched && form.get('password').invalid"
           class="validation">
@@ -55,7 +55,7 @@
 
       <div class="login-btn">
         <app-general-button
-          [style]="{width: '20rem'}"
+          [class]="isAuth === 'SIGN_IN' ? 'header-login-btn login-modal-btn' : 'login-modal'"
           type="submit"
           [text]="isAuth === 'SIGN_IN' ? 'Log In' : 'Join Us'"
           [disabled]="form.invalid || submitted"

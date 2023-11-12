@@ -1,23 +1,43 @@
 @import "src/styles/common";
 
 .header {
-  padding: vwPC(24) vwPC(32);
+  padding: vwPC(24) vwPC(45);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.user-name {
+  font-size: vwPC(18);
+}
+
+.logout-icon{
+  width: vwPC(26);
+}
+
+.logout-icon:hover {
+  cursor: pointer;
+}
+
 nav ul{
   display: flex;
+  list-style-type: none;
 }
 
 nav ul li {
   margin: 0 vwPC(16);
+  font-size: vwPC(18);
+}
+
+nav ul li:hover {
+  cursor: pointer;
 }
 
 .profile-info {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 .profile-info h3 {
@@ -26,14 +46,17 @@ nav ul li {
 
 .logo-block {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  padding-left: vwPC(45);
 
   img {
     width: vwPC(56);
     height: vwPC(56);
   }
+}
+
+.logo-block img:hover {
+  cursor: pointer;
 }
 
 .login-btn {
@@ -43,7 +66,6 @@ nav ul li {
   font-size: vwPC(16);
   font-weight: 600;
   cursor: pointer;
-  margin-right: vwPC(45);
 
   &:hover {
     cursor: pointer;
